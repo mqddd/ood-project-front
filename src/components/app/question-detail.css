@@ -1,0 +1,127 @@
+.question-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 32px;
+    padding: 32px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.question-deatil-header {
+    border-bottom: 1px solid black;
+}
+
+.question-deatil-avatar-image {
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 12px;
+    border-radius: 50%;
+}
+
+.question-deatil-username {
+
+}
+
+.question-detail-content {
+
+}
+
+.question-deatil-content-text {
+    text-align: left;
+    font-size: 1.2em;
+    line-height: 1.8em;
+}
+
+.question-detail-footer {
+
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #F96A9355;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 12px 0 12px 0;
+}
+
+.comment-username {
+    margin-bottom: 12px;
+}
+
+.comment-title {
+    margin-bottom: 12px;
+}
+
+.comment-content {
+    text-align: left;
+}
+
+.question-detail-add-comment {
+
+}
+
+.question-detail-add-comment-header {
+    text-align: left;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    color: #095F8B;
+}
+
+.add-comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.add-comment-title {
+    margin-bottom: 12px;
+    min-width: 18em;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 6px;
+    transition: all 250ms ease-in-out;
+}
+
+.add-comment-title:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 0.2px #0CA7B7;
+}
+
+.add-comment-content {
+    margin-bottom: 12px;
+    width: 60%;
+    min-width: 18em;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 6px;
+    transition: all 250ms ease-in-out;
+}
+
+.add-comment-content:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 0.2px #0CA7B7;
+}
+
+.add-comment-submit {
+    font-size: 0.8em;
+    border: 1px solid #095F8B;
+    border-radius: 5px;
+    color: #095F8B;
+    background-color: white;
+    padding: 10px;
+}
+
+.add-comment-submit:hover {
+    color: white;
+    background-color: #095F8B;
+}
