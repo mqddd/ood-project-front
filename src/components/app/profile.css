@@ -20,7 +20,7 @@
 .profile-header-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     padding: 12px 32px 32px;
 }
 
@@ -54,11 +54,13 @@
 }
 
 .profile-username {
-
+    direction: rtl;
+    text-align: left;
 }
 
 .profile-bio {
-    text-align: left;
+    direction: rtl;
+    text-align: right;
 }
 
 .profile-content {
@@ -110,4 +112,8 @@
 .profile-content-favorites:focus {
     color: white;
     background-color: #095F8B;
+}
+
+.profile-content-warning {
+    direction: rtl;
 }

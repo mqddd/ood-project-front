@@ -1,7 +1,7 @@
 .page-container {
     height: 100vh;
     display: grid;
-    grid-template-columns: 2fr 4fr;
+    grid-template-columns: 4fr 2fr;
 }
 
 .right-side {
@@ -36,11 +36,13 @@
 .left-title {
     color: white;
     font-size: 30px;
+    direction: rtl;
 }
 
 .left-text {
     color: white;
     font-size: 14px;
+    direction: rtl;
 }
 
 .left-btn {
@@ -52,6 +54,7 @@
     color: white;
     background-color: #095F8B;
     padding: 12px;
+    direction: rtl;
 }
 
 .left-btn:hover {

@@ -13,17 +13,17 @@ class Ask extends React.Component {
             <div className="ask-container">
                 <div className="ask-form">
                     <h1 className="ask-title">
-                        Write your Question here:
+                        سؤال خود را اینجا بنویسید:
                     </h1>
                     <form action="#" className="ask-question-form">
                         <div className="ask-form-group">
-                            <input type="text" name="title" placeholder="title"/>
+                            <input type="text" name="title" placeholder="عنوان"/>
                         </div>
                         <div className="ask-form-group">
-                            <textarea name="content" placeholder="content"/>
+                            <textarea name="content" placeholder="متن"/>
                         </div>
                         <button class="ask-btn" type="submit"> 
-                            Ask Question
+                            ارسال سؤال
                         </button>
                     </form>
                 </div>

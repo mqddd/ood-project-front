@@ -23,13 +23,13 @@ class AuthPage extends React.Component {
     render() {
         const { isLoginActive } = this.state;
         return (
-            <div className="page-container">
-                <div className="left-side">
-                    <LeftSide parentCallback={this.getLoginInfoFromSidebar}/>
-                </div>
+            <div className="page-container">          
                 <div className="right-side">
                     {isLoginActive ? <Login /> : <Register />}
-                </div>          
+                </div>      
+                <div className="left-side">
+                    <LeftSide parentCallback={this.getLoginInfoFromSidebar}/>
+                </div>    
             </div>
         );
     }
@@ -40,14 +40,14 @@ class LeftSide extends React.Component {
         super(props);
         this.state = {
             loginState: {
-                title: 'Welcome back!',
-                text: 'To keep connected with us please login with your personal info',
-                button: 'SIGN IN'
+                title: 'خوش آمدید!',
+                text: 'از این قسمت می‌توانید به حساب کاربری خود وارد شوید.',
+                button: 'ورود به حساب کاربری'
             },
             registerState: {
-                title: 'Hello, Friend!',
-                text: "Join us to share your experiences and gain other's",
-                button: 'SIGN UP'
+                title: 'سلام دوست عزیز!',
+                text: "از این قسمت می‌توانید برای خود یک حساب کاربری ایجاد کنید.",
+                button: 'ایجاد حساب کاربری'
             },
             inLoginState: true
         }

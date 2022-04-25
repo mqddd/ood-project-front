@@ -35,6 +35,7 @@
     border: none;
     border-radius: 6px;
     transition: all 250ms ease-in-out;
+    direction: rtl;
 }
 
 .form-group input:focus {

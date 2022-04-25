@@ -11,6 +11,7 @@
 
 .ask-title {
     color: #095F8B;
+    direction: rtl;
 }
 
 .ask-question-form {
@@ -22,6 +23,7 @@
 
 .ask-form-group {
     width: 100%;
+    direction: rtl;
 }
 
 .ask-form-group input{
@@ -66,6 +68,7 @@
     color: #095F8B;
     background-color: white;
     padding: 10px;
+    direction: rtl;
 }
 
 .ask-btn:hover {

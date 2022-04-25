@@ -14,20 +14,20 @@ class Register extends React.Component {
         return (
             <div className="container">
                     <div className="header">
-                        <h1>Create Account</h1>
+                        <h1>ایجاد حساب کاربری</h1>
                     </div>
                     <div className="form">
                         <div className="form-group">
-                            <input type="text" name="username" placeholder="username"/>
+                            <input type="text" name="username" placeholder="نام کاربری"/>
                         </div>
                         <div className="form-group">
-                            <input type="text" name="email" placeholder="email"/>
+                            <input type="text" name="email" placeholder="ایمیل"/>
                         </div>
                         <div className="form-group">
-                            <input type="password" name="password" placeholder="password"/>
+                            <input type="password" name="password" placeholder="رمز عبور"/>
                         </div>
                         <Link class="btn" to="/index/profile">  
-                            SIGN UP   
+                            ایجاد   
                         </Link>
                     </div>    
             </div>

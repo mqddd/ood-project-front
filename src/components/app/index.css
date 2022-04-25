@@ -2,7 +2,7 @@
     height: 100vh;
     background-color: #f3f3f3;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 5fr 1fr;
 }
 
 .side-bar {

@@ -11,8 +11,8 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className="root-container">
-                <SideBar />
                 <Outlet/>
+                <SideBar/>
             </div>
         );
     }
@@ -30,16 +30,16 @@ class SideBar extends React.Component {
                     Loggo
                 </h2>
                 <Link to="/index/profile" className="navigation-btn">
-                    Profile
+                    حساب کاربری
                 </Link>
                 <Link to="/index/questions" className="navigation-btn">
-                    Questions
+                    سؤالات دیگران
                 </Link>
                 <Link to="/index/add" className="navigation-btn">
-                    Ask
+                    سؤال بپرسید
                 </Link>
                 <Link to="/" className="navigation-btn logout">
-                    Logout
+                    خروج از حساب کاربری
                 </Link>
             </div>
         );

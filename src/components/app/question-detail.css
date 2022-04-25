@@ -1,7 +1,7 @@
 .question-detail-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     margin: 32px;
     padding: 32px;
     border-radius: 12px;
@@ -29,9 +29,10 @@
 }
 
 .question-deatil-content-text {
-    text-align: left;
+    text-align: right;
     font-size: 1.2em;
     line-height: 1.8em;
+    direction: rtl;
 }
 
 .question-detail-footer {
@@ -41,7 +42,7 @@
 .comment-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     background-color: #F96A9355;
     border-radius: 6px;
     padding: 12px;
@@ -50,14 +51,17 @@
 
 .comment-username {
     margin-bottom: 12px;
+    direction: rtl;
 }
 
 .comment-title {
     margin-bottom: 12px;
+    direction: rtl;
 }
 
 .comment-content {
-    text-align: left;
+    text-align: right;
+    direction: rtl;
 }
 
 .question-detail-add-comment {
@@ -65,16 +69,17 @@
 }
 
 .question-detail-add-comment-header {
-    text-align: left;
+    text-align: right;
     margin-top: 24px;
     margin-bottom: 24px;
     color: #095F8B;
+    direction: rtl;
 }
 
 .add-comment-form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .add-comment-title {
@@ -87,6 +92,7 @@
     border: none;
     border-radius: 6px;
     transition: all 250ms ease-in-out;
+    direction: rtl;
 }
 
 .add-comment-title:focus {
@@ -105,6 +111,7 @@
     border: none;
     border-radius: 6px;
     transition: all 250ms ease-in-out;
+    direction: rtl;
 }
 
 .add-comment-content:focus {
@@ -119,6 +126,7 @@
     color: #095F8B;
     background-color: white;
     padding: 10px;
+    direction: rtl;
 }
 
 .add-comment-submit:hover {
