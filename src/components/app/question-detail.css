@@ -93,6 +93,7 @@
     border-radius: 6px;
     transition: all 250ms ease-in-out;
     direction: rtl;
+    font-family: Vazir;
 }
 
 .add-comment-title:focus {
@@ -112,6 +113,7 @@
     border-radius: 6px;
     transition: all 250ms ease-in-out;
     direction: rtl;
+    font-family: Vazir;
 }
 
 .add-comment-content:focus {

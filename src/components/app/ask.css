@@ -36,6 +36,7 @@
     border: none;
     border-radius: 6px;
     transition: all 250ms ease-in-out;
+    font-family: Vazir;
 }
 
 .ask-form-group input:focus{
