@@ -36,6 +36,7 @@
     border-radius: 6px;
     transition: all 250ms ease-in-out;
     direction: rtl;
+    font-family: Vazir;
 }
 
 .form-group input:focus {
