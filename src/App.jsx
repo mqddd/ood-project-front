@@ -10,14 +10,7 @@ import QuestionDetail from './components/app/question-detail';
 
 import './App.css';
 
-class App extends React.Component {
-  
-  constructor(props) {
-    super(props);
-    
-  }
-
-  render() {
+function App() {
     return (
       <BrowserRouter>
         <div className="App">
@@ -33,8 +26,6 @@ class App extends React.Component {
         </div>
       </BrowserRouter>
     );
-  }
-
 }
 
 export default App;

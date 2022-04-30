@@ -59,6 +59,7 @@ a {
     padding: 12px;
     opacity: 0.8;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn:hover {

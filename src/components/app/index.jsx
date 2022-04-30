@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-
 import './index.css';
+import {useNavigate} from 'react-router-dom'
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -18,12 +18,16 @@ class MainPage extends React.Component {
     }
 }
 
-class SideBar extends React.Component {
-    constructor(props) {
-        super(props);
+function SideBar() {
+    const isUser = localStorage.getItem("user")
+    if (!isUser) window.location = '/'
+    const navigate = useNavigate()
+
+    const logout = () => {
+        localStorage.clear()
+        navigate('/')
     }
 
-    render() {
         return (
             <div className="side-bar">
                 <h2 className="main-page-loggo">
@@ -38,12 +42,11 @@ class SideBar extends React.Component {
                 <Link to="/index/add" className="navigation-btn">
                     سؤال بپرسید
                 </Link>
-                <Link to="/" className="navigation-btn logout">
+                <div onClick={() => logout()} className="navigation-btn logout">
                     خروج از حساب کاربری
-                </Link>
+                </div>
             </div>
         );
-    }
 }
 
 export default MainPage;

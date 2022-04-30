@@ -1,38 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Login from './login';
 import Register from './register';
-
 import './auth-page.css';
 
 
-class AuthPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoginActive: false
-        }
-    }
+function AuthPage() {
+    const [isLoginActive, setIsLoginActive] = useState(false)
+    const getLoginInfoFromSidebar = data => setIsLoginActive(data)
+    const isUser = localStorage.getItem("user")
 
-    getLoginInfoFromSidebar = (data) => {
-        this.setState({
-            isLoginActive: data
-        });
-    }
-
-    render() {
-        const { isLoginActive } = this.state;
+    if (isUser) return window.location = '/index/profile'
+    
         return (
             <div className="page-container">          
                 <div className="right-side">
                     {isLoginActive ? <Login /> : <Register />}
                 </div>      
                 <div className="left-side">
-                    <LeftSide parentCallback={this.getLoginInfoFromSidebar}/>
+                    <LeftSide parentCallback={getLoginInfoFromSidebar}/>
                 </div>    
             </div>
         );
-    }
 }
 
 class LeftSide extends React.Component {

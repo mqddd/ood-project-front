@@ -40,7 +40,9 @@
 } */
 
 .navigation-btn.logout {
-    margin-top: auto;
+    display: fixed;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .main-page-right-side {
