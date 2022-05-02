@@ -1,29 +1,26 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import QuestionCard from './question-card';
 import './questions.css';
 
-class Questions extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+function Questions() {
+    const [posts, setPosts] = useState({})
 
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/post/', {
+        }).then(res => {
+            setPosts(res.data)
+        })
+    }, [])
+    console.log(posts)
 
-    render() {
         return (
             <div className="questions-container">
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
-                <QuestionCard />
+                {posts.results && posts.results.map((post) => (
+                    <QuestionCard content={post.content} date={post.created_at} username={post.author} id={post.id}/>
+                ))}
             </div>
         );
-    }
 }
 
 export default Questions;

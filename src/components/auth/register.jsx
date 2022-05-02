@@ -17,9 +17,7 @@ const Register = () => {
 
     const sendData = () => {
         axios.post('http://127.0.0.1:8000/api/rest-auth/registration/', data).then(res => {
-            if(res.status === 201) {
-                console.log(res)
-            
+            if(res.status === 201) {            
                 localStorage.setItem('user', JSON.stringify({
                     access: res.data.access_token,
                     username: res.data.user.username

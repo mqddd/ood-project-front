@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import './ask.css';
 
@@ -10,7 +11,21 @@ function Ask() {
     })
 
     const sendData = () => {
-        axios.post()
+        axios.post('http://127.0.0.1:8000/api/post/', form, {
+            headers: {
+                Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).access}`
+            }
+        }).then((r) => {
+            if(r.status === 201) {
+                toast.success('سوال با موفقیت ثبت شد')
+                setForm({
+                    title: '',
+                    content: ''
+                })
+            }
+        }).catch(() => {
+            toast.error('مشکلی پیش آمده است')
+        })
     }
 
     return (
@@ -21,20 +36,20 @@ function Ask() {
                 </h1>
                 <form action="#" className="ask-question-form">
                     <div className="ask-form-group">
-                        <input type="text" name="title" placeholder="عنوان" onChange={(e) => setForm({
+                        <input type="text" name="title" value={form.title} placeholder="عنوان" onChange={(e) => setForm({
                             ...form,
                             title: e.target.value
                         })} />
                     </div>
                     <div className="ask-form-group">
-                        <textarea name="content" placeholder="متن" onChange={(e) => setForm({
+                        <textarea name="content" placeholder="متن" value={form.content} onChange={(e) => setForm({
                             ...form, 
                             content: e.target.value
                         })}/>
                     </div>
-                    <button class="ask-btn" type="submit" onClick={() => sendData()}>
+                    <div class="ask-btn" onClick={() => sendData()}>
                         ارسال سؤال
-                    </button>
+                    </div>
                 </form>
             </div>
         </div>

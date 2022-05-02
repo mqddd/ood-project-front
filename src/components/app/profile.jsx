@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import QuestionCard from './question-card';
 import './profile.css';
 import avatar from '../../avatar.svg';
+import axios from 'axios';
 
 function Profile() {
         return (
@@ -29,36 +30,38 @@ function ProfileHeader() {
         );
 }
 
-class ProfileContent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            favorites: false
-        }
-    }
+function ProfileContent() {
+            const [favorites, setFavorites] = useState(false)
+            const [likedPosts, setLikedPosts] = useState({})
+            const [myPosts, setMyPosts] = useState({})
 
-    setFavoritesQuestionsState = () => {
-        this.setState({
-            favorites: true
-        })
-    }
+            useEffect(() => {
+                if(favorites) {
+                    axios.get('http://127.0.0.1:8000/api/post/?filter=liked', {
+                        headers: {
+                            Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).access}`
+                        }
+                    }).then(res => {
+                        setLikedPosts(res.data)
+                    })
+                } else {
+                    axios.get('http://127.0.0.1:8000/api/post/?filter=me', {
+                        headers: {
+                            Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).access}`
+                        }
+                    }).then(res => {
+                        setMyPosts(res.data)
+                    })
+                }
+            }, [favorites])
 
-    setAskedQuestionsState = () => {
-        this.setState({
-            favorites: false
-        })
-    }
-
-    render() {
-        const { favorites } = this.state;
-
-        return (
+            return (
             <div className="profile-content-container">
                 <div className="profile-content-header">
-                    <button className="profile-content-mine" onClick={this.setAskedQuestionsState}>
+                    <button className="profile-content-mine" onClick={() => setFavorites(false)}>
                         سؤالات پرسیده شده
                     </button>
-                    <button className="profile-content-favorites" onClick={this.setFavoritesQuestionsState}>
+                    <button className="profile-content-favorites" onClick={() => setFavorites(true)}>
                         سؤالات پسندیده شده
                     </button>
                 </div>
@@ -67,17 +70,14 @@ class ProfileContent extends React.Component {
                     <div>
                         <h5 className="profile-content-warning">شما هیچ سؤالی را نپسندیده‌اید!</h5>
                     </div> : <div>
-                        <QuestionCard />
-                        <QuestionCard />
-                        <QuestionCard />
-                        <QuestionCard />
-                        <QuestionCard />
+                        {myPosts.results && myPosts.results.map(post => {
+                           return <QuestionCard content={post.content} date={post.created_at} username={post.author} id={post.id} />
+                        })}
                     </div>
                     }
                 </div>
             </div>
         ); 
-    }
 }
 
 
