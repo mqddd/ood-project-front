@@ -20,7 +20,7 @@ function App() {
               <Route path="profile" element={<Profile/>}/>
               <Route path="questions" element={<Questions/>}/>
               <Route path="add" element={<Add/>}/>
-              <Route path="question-detail" element={<QuestionDetail/>}/>
+              <Route path="question-detail/:id" element={<QuestionDetail/>}/>
             </Route>
           </Routes>
         </div>

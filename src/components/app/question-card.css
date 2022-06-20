@@ -52,3 +52,23 @@
     direction: rtl;
     padding: 12px;
 }
+
+.question-card-likes {
+    text-align: left;
+    font-size: 0.7em;
+    margin-left: 4px;
+}
+
+.question-card-like-btn {
+    width: fit-content;
+    font-size: 0.6em;
+    border: none;
+    margin-left: 4px;
+    border-radius: 50px;
+    color: white;
+    background-color: #095F8B;
+    padding: 4px;
+    opacity: 0.8;
+    text-decoration: none;
+    cursor: pointer;
+}

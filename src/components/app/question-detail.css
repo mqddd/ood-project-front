@@ -10,22 +10,25 @@
 
 .question-deatil-header {
     border-bottom: 1px solid black;
+    width: 340px;
 }
 
 .question-deatil-avatar-image {
-    float: left;
     height: 100px;
     width: 100px;
     margin: 12px;
     border-radius: 50%;
+    float: left;
 }
 
 .question-deatil-username {
-
+    text-align: right;
+    text-decoration: rtl;
 }
 
-.question-detail-content {
-
+.question-deatil-time {
+    text-align: right;
+    text-decoration: rtl;
 }
 
 .question-deatil-content-text {
@@ -36,7 +39,7 @@
 }
 
 .question-detail-footer {
-
+    width: 100%;
 }
 
 .comment-container {

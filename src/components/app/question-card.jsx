@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './question-card.css';
 import avatar from '../../avatar.svg';
 
-function QuestionCard({username, date, content, id}) {
+function QuestionCard({username, date, content, id, like_status, likes}) {
         return (
             <div className="question-card">
                 <Link to={`/index/question-detail/${id}`} className="react-link"> 
@@ -20,6 +20,12 @@ function QuestionCard({username, date, content, id}) {
                         </div>
                         <div className="question-card-content">
                             <p className="question-card-summary">{content}</p>
+                        </div>
+                        <div className="question-card-like-btn" onClick={() => {}}>
+                            {!like_status ? 'پسندیدن' : ''}
+                        </div>
+                        <div className="question-card-likes">
+                            تعداد پسندها: {likes}
                         </div>
                 </Link>
             </div>

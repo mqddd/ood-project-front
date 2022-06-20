@@ -18,6 +18,19 @@ function Profile() {
 
 function ProfileHeader() {
     const username = localStorage.getItem("user") && JSON.parse(localStorage.getItem("user")).username
+
+    const [occasions, setOccasions] = useState({})
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/DayOccasions', {
+        }).then(res => {
+            setOccasions(res.data)
+        }).catch(e => {
+            console.log(e?.message);
+        })
+
+        
+    }, [])
         return (
             <div className="profile-header">
                 <div className="profile-avatar">
@@ -26,8 +39,24 @@ function ProfileHeader() {
                 <div className="profile-header-right">
                     <h2 className="profile-username">سلام {username}!</h2>
                 </div>
+                <div className="profile-header-occasions">
+                    <p className="profile-header-occassion-header">:مناسبت‌های امروز</p>
+                    {occasions.events && occasions.events.map((occasion) => (
+                        <Occasions desc={occasion.description}/>
+                    ))} 
+                </div>   
             </div>
         );
+}
+
+function Occasions(props) {
+    return (
+        <div className="occasion-container">
+            <p className="occasion-desc">
+                {props.desc} -
+            </p>
+        </div>
+    );
 }
 
 function ProfileContent() {

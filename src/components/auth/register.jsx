@@ -10,21 +10,37 @@ const Register = () => {
 
     const [data, setData] = useState({
         username: '',
-        email: '',
         password1: '',
-        password2: ''
+        password2: '',
+        phone_number: ''
+    })
+
+    const [activateData, setActivateData] = useState({
+        phone_number: data.phone_number,
+        code: ''
     })
 
     const sendData = () => {
-        axios.post('http://127.0.0.1:8000/api/rest-auth/registration/', data).then(res => {
-            if(res.status === 201) {            
-                localStorage.setItem('user', JSON.stringify({
-                    access: res.data.access_token,
-                    username: res.data.user.username
-                }))
-                navigate('/index/profile')
+        axios.post('http://127.0.0.1:8000/api/rest-auth/registration/phone/activate', activateData).then(res => {
+            console.log(activateData);    
+                if(res.status === 200) {
+                toast.success('user created successfully!')
             }
         }).catch((e) => {
+            console.log(activateData);
+            toast.error(e?.message)
+        })
+    }
+
+    const sendData2 = () => {
+        axios.post('http://127.0.0.1:8000/api/rest-auth/registration/', data).then(res => {
+            console.log(data);
+            if(res.status === 201) {            
+                console.log('code sent:', data);
+                toast.success('code sent!')
+            }
+        }).catch((e) => {
+            console.log(data);
             toast.error(e?.message)
         })
     }
@@ -43,9 +59,9 @@ const Register = () => {
                             })}/>
                         </div>
                         <div className="form-group">
-                            <input type="text" name="email" placeholder="ایمیل" onChange={(e) => setData({
+                            <input type="text" name="phone" placeholder="شماره موبایل" onChange={(e) => setData({
                                 ...data,
-                                email: e.target.value
+                                phone_number: e.target.value
                             })}/>
                         </div>
                         <div className="form-group">
@@ -58,6 +74,21 @@ const Register = () => {
                             <input type="password" name="confirm-password" placeholder="تکرار رمز عبور" onChange={(e) => setData({
                                 ...data,
                                 password2: e.target.value
+                            })}/>
+                        </div>
+                        <div class="btn" onClick={() => sendData2()}>  
+                            دریافت کد   
+                        </div>
+                        <div className="form-group">
+                            <input type="text" name="phone" placeholder="تکرار شماره موبایل" onChange={(e) => setActivateData({
+                                ...activateData,
+                                phone_number: e.target.value
+                            })}/>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" name="code" placeholder="کد دریافتی" onChange={(e) => setActivateData({
+                                ...activateData,
+                                code: e.target.value
                             })}/>
                         </div>
                         <div class="btn" onClick={() => sendData()}>  

@@ -2,3 +2,42 @@
     background-color: white;
     padding: 32px;
 }
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    direction: rtl;
+    gap: 16px;
+}
+
+.search-input {
+    min-width: 18em;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 6px;
+    transition: all 250ms ease-in-out;
+    direction: rtl;
+    font-family: Vazir;
+}
+
+.search-btn {
+    width: fit-content;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    background-color: #095F8B;
+    padding: 12px;
+    opacity: 0.8;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.search-btn:hover {
+    opacity: 1;
+}
